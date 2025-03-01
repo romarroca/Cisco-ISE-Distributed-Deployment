@@ -12,7 +12,9 @@ The content of this document is based on the utilization of the following lab co
 It's important to acknowledge that this document does not aim to be an exhaustive guide but rather a visual aid that complements official documentation. A foundational understanding of concepts such as Active Directory Domain Services, Certificate Authority, and Group Policy Object is assumed. Additionally, familiarity with tasks such as Cisco Switch AAA configuration and basic Windows troubleshooting is expected. By leveraging this guide, users can enhance their existing knowledge and streamline the deployment process for Cisco ISE.
 
 Network Topology
-![image](https://github.com/user-attachments/assets/35a91373-15cf-4527-b927-e9197ac4c60a)
+
+![image](https://github.com/user-attachments/assets/f9562cb4-6bf7-4f8b-9976-7698432846dc)
+
 
 Active Directory
 To ensure a smooth and effective initial installation of Cisco ISE, it is crucial to possess the following information and establish connectivity to the following components:
@@ -22,13 +24,17 @@ To ensure a smooth and effective initial installation of Cisco ISE, it is crucia
 Verify that there is an existing DNS entry for each ISE nodes
 
 DNS Record
+
 <img width="465" alt="image" src="https://github.com/user-attachments/assets/5d88c5b0-3d7e-4868-a490-ce7e0bce055d" />
 
 Reverse Lookup Zone
+
 <img width="468" alt="image" src="https://github.com/user-attachments/assets/9ab2d2c9-9a82-4484-ba4d-995675168dec" />
 
 Certificate Authority
+
 Certificate Services is also installed on this Domain Controller as we will need this to signed our ISE-nodes Certificate
+
 <img width="468" alt="image" src="https://github.com/user-attachments/assets/a36ae40c-9011-47be-aaf6-3937daa9c2e5" />
 
 
