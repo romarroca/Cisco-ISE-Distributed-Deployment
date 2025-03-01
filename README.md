@@ -92,7 +92,71 @@ The patch will take several minutes as it will have to upload the patch, install
 
 Verify successful patch installation.
  
-![image](https://github.com/user-attachments/assets/3a6efe89-44a6-491b-9626-09d1dd5d4923)
+![image](https://github.com/user-attachments/assets/c546274f-17f1-4486-abb9-71a17d6bb258)
+
+Generate a Certificate Signing Request for a Subject Alternative Names (SAN) Certificate
+When generating certificates, various methods exist, but this guide will specifically detail the process of creating a Subject Alternative Names (SAN) Certificate. The procedure involves utilizing a general common name and appending multiple values for SAN, each associated with distinct DNS names. It's important to note that the common name should also be incorporated within the SAN entries.
+
+![image](https://github.com/user-attachments/assets/6aeca63e-15b1-4086-a019-124fe8383d5f)
+
+Subsequently, the certificate needs to undergo the signing process by a certificate authority. Within this tutorial, we will employ Microsoft Certificate Services for this purpose.
+
+•	Request Certificate: This step involves submitting our previously generated Certificate Signing Request (CSR) for the purpose of obtaining the signature.
+
+•	Download CA Certificate: Once the CSR has been approved and signed by the certificate authority, you will need to acquire the corresponding CA certificate. This CA certificate is crucial and should be imported into the ISE Trusted Root Certificate Authorities.
+
+![image](https://github.com/user-attachments/assets/4dcef43b-1dc2-45b1-8926-a3081d7c7888)
+
+![image](https://github.com/user-attachments/assets/9ad3400c-7df2-4e1b-a5ef-b4b90138a2f3)
+
+![image](https://github.com/user-attachments/assets/0b9b3bb0-c503-4986-98cc-f0fc7f4ae286)
+
+![image](https://github.com/user-attachments/assets/180ef695-dec2-45d4-93d7-7cca7ba07bf3)
+
+![image](https://github.com/user-attachments/assets/d18f15ce-4b43-4626-b5c3-9d4d10839dab)
+
+Same certificate will be used for other nodes. In this case, we already have a signed SAN certificate from ise2.lab.local and we will just have to import it to ise1.
+After importing the certificate, the ISE application will have to reload.
+
+![image](https://github.com/user-attachments/assets/1fffb44e-f825-445b-806c-dbc20b5db48c)
+
+![image](https://github.com/user-attachments/assets/425eb4bc-8a5e-43a5-8498-5805e3aed6f3)
+
+Following the reload of ise1, the next step involves initiating Node registration. Within this lab environment, ise2.lab.local will fulfill the roles of Primary Administration, Primary Monitoring, and Policy Services Node (PSN). On the other hand, ise2 will serve as the secondary counterpart.
+
+While ise2 has already been transitioned to a primary role, it's essential to note that initially, the process requires selecting the "Make Primary" option to transform the node into a distributed deployment configuration.
+
+![image](https://github.com/user-attachments/assets/53006a44-b857-4afc-9f25-811d71e82a5f)
+
+Now on ise2, navigate to Deployment>Deployment Nodes
+Click Register and enter admin credentials of ise1.
+
+![image](https://github.com/user-attachments/assets/91982c49-16cc-40f5-b13a-e4be68c34c5e)
+
+Click submit at the bottom of the page. This will trigger another reboot of the device as it will sync to the ise2.
+
+![image](https://github.com/user-attachments/assets/fd38dc77-9899-454d-9f9c-327f82f65bba)
+
+![image](https://github.com/user-attachments/assets/4c975fb3-ae56-4daf-98af-e66cf79f87a8)
+
+![image](https://github.com/user-attachments/assets/1c704a5b-c3fd-43a6-8b56-9249e7bb2af4)
+
+**Summary**
+
+The successful deployment of ISE hinges on meticulous design preparation tailored to your specific environment needs. Within this document, we accomplish a seamless two-node installation: ise2.lab.local serves as the Primary Administration, Monitoring, and Policy Service Node, with ise1.lab.local as the secondary counterpart. Additionally, we address essential elements of the ISE pre-deployment checklist, encompassing DNS, NTP, Patching, and Certificates. It's noteworthy that the deployment process for multiple nodes largely follows the same blueprint, involving device initialization and registration within the ISE cluster.
+
+This guide should be regarded as a supplementary resource rather than a replacement for an official ISE (Identity Services Engine) deployment guide. While it offers valuable insights and recommendations, it is important to emphasize that official ISE deployment documentation remains the authoritative source for configuring and implementing ISE solutions effectively. This supplemental guide can provide additional context, tips, and perspectives to enhance your understanding and streamline the deployment process, but it is essential to refer to the official documentation for comprehensive and accurate guidance on ISE deployment.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
