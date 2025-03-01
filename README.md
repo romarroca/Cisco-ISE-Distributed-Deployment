@@ -67,7 +67,49 @@ This document will focus on using cisco ISE 3.2 evaluation mode.
 Turn on the VM and type setup on the initial prompt.
 Work through the initial setup and make sure to input the correct values.
 
-![image](https://github.com/user-attachments/assets/2d7859b0-0385-4aef-844e-a5dc07886021)
+![image](https://github.com/user-attachments/assets/000a1a56-d573-452b-a5e3-ba46a984ada4)
+
+Work through the initial setup and make sure to input the correct values based on your environment.
+
+![image](https://github.com/user-attachments/assets/43f5abba-660e-48f1-ad8e-cbca1f262290)
+
+The installation will take several minutes. After installation you will be prompted to login the cli.
+Verify DNS reachability, NTP settings and application status of ISE.
+
+![image](https://github.com/user-attachments/assets/26d8f3b5-6871-478b-b333-ea44d297c9ea)
+
+![image](https://github.com/user-attachments/assets/41f3608a-1d7d-47ad-a6c8-f922d1d2df77)
+
+Verify Application server is running.
+
+![image](https://github.com/user-attachments/assets/ed9d3d61-61d2-47c5-9f7a-33e5e20579e2)
+
+ISE node is successfully installed.
+Login to gui https://ise1.lab.local or https://192.168.8.6 and make sure to upload the latest patch base on the version you are currently running. In this case, we are using ISE 3.2 and will have to push ISE patch 3. Navigate to System>Maintenance>Patch Management Install Patch.
+The patch will take several minutes as it will have to upload the patch, install, and reboot the application.
+
+![image](https://github.com/user-attachments/assets/b7e087f3-caae-4bdb-9146-1d841d560fae)
+
+Verify successful patch installation.
+ 
+![image](https://github.com/user-attachments/assets/3a6efe89-44a6-491b-9626-09d1dd5d4923)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
